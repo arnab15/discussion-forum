@@ -1,0 +1,11 @@
+const express = require("express");
+const router = express.Router();
+const { authRouter } = require("./auth");
+const { commentRouter } = require("./comment");
+const { fourmRouter } = require("./fourm");
+const { uploadRouter } = require("./upload");
+router.use("/forums", fourmRouter);
+router.use("/auth", authRouter);
+router.use("/comments", commentRouter);
+router.use("/upload", uploadRouter);
+module.exports = router;
